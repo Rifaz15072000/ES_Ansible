@@ -1,0 +1,17 @@
+---
+- name: File module
+  hosts: all
+  become: yes
+  tasks:
+    - name: creating a file
+      file:
+        path: /tmp/newfile.txt
+        state: absent
+        owner: rifaz
+        group: rifaz
+        mode: '0754'
+
+    - name: creating a dir
+      file:
+        path: /tmp/myfolder
+        state: absent

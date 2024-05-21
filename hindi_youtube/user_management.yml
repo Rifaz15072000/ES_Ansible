@@ -1,0 +1,14 @@
+---
+- name: user management
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: User Collection
+    user:
+      name: nick
+      comment: new user adding for devops team
+      shell: /usr/bin/bash
+      groups: rifaz,nick
+      state: absent
+      remove: yes  

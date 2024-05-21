@@ -1,0 +1,14 @@
+---
+- name: Copying files to remote
+  hosts: all
+  become: yes  # Use this if the Ansible user needs elevated permissions
+
+  tasks:
+    - name: Copy files
+      copy:
+        src: /home/ubuntu/myfile.txt
+        dest: /tmp/
+        owner: rifaz
+        group: rifaz
+        mode: '0777'
+        backup: true

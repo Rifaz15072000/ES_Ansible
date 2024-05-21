@@ -1,0 +1,12 @@
+---
+- name: script run
+  hosts: all
+  become: yes  # Use privilege escalation to execute the task as superuser
+
+  tasks:
+    - name: runscript
+      shell: /tmp/script/test.sh >> /tmp/script/test.log
+      args:
+        chdir: /tmp/script
+        creates: /tmp/script/test.log
+

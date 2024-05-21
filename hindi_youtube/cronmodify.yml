@@ -1,0 +1,11 @@
+---
+- name: cron remove
+  hosts: all
+  become: yes
+  tasks:
+    - name: remove crontab
+      cron:
+        name: Run Test Script
+        state: absent
+        user: ubuntu  
+        disabled: yes

@@ -1,0 +1,12 @@
+---
+- name: http
+  hosts: all
+  become: yes
+  tasks: 
+  - name: Download file
+    get_url:
+      url: https://www.python.org/ftp/python/3.12.3/Python-3.12.3.tar.xz
+      dest: /tmp/script/
+      owner: rifaz
+      group: rifaz
+      mode: '0777'  
